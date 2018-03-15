@@ -22,3 +22,47 @@ select,
 textarea {
     max-width: 280px;
 }
+#costado {
+    height: 300px;
+    width: auto;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #bababa;
+    
+}
+input[type=search] {
+    padding: 10px;
+    margin-top:10px;
+    margin-left:0;
+    margin-right:0:
+}
+#cont {
+   
+    width:900px;
+    height:300px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #bababa; 
+}
+
+.modal-body{
+    background-color: white;
+    padding:0;
+    position:center;
+
+
+}
+#pop{width:40%;
+             background-color:white;
+             position:center;
+             margin-left:30%;
+             margin-right:30%;
+             margin-top:10%;
+}
+.modal-dialog{
+    margin:none;
+
+}
+.modal-header

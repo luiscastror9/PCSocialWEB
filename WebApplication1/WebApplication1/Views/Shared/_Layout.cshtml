@@ -1,71 +1,79 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>titulo del sitio</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    
-
+    <!--barra de navegacion-->
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-  
-            <ul class="nav nav-pills">
-                <a class="navbar-brand" href="index.cshtml">nombre del sitio</a>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#popupwindow" >comenzar</button>
-                    <button type="button" class="btn btn-default navbar-btn">instructivos</button>
-                    <button type="button" class="btn btn-default navbar-btn">acerca de</button>
-            </ul>
+        <ul class="nav nav-pills">
+            <a class="navbar-brand" href="index.cshtml">nombre del sitio</a>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#popupwindow">comenzar</button>
+            <button type="button" class="btn btn-default navbar-btn">instructivos</button>
+            <button type="button" class="btn btn-default navbar-btn">acerca de</button>
+        </ul>
 
+    </div>
 
+    <!--botonera tipo de pc-->
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </li>
+    </div>
+    <!--modal login-->
+    <div class="modal fade" id="popupwindow">
+        <div id="pop">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <h3>INICIAR SESION</h3>
+            </div>
+            <div class="modal-body">
+                <form method="post" action='' name="login_form">
+                    <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
+                    <p><input type="password" class="span3" name="passwd" placeholder="Contraseña"></p>
+                    <p>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <a href="#">Olvidé mi contraseña</a>
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                Crear una cuenta
+                <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
         </div>
     </div>
 
 
-<!--modal login-->    
-    <div class="modal fade" id="popupwindow">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">cerrar</button>
-                </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
 
-                <div class="input-group">
-                    <!--- <span class="input-group-addon"<i class="glyphicon glyphicon-user"></i></span> <!--->
-                    </div>
-                    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
-                </div>
-
-            </div>
-
-           </div>
-
-
-
-
-
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>footer</p>
-            </footer>
-        </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-
-
-
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
     </html>
