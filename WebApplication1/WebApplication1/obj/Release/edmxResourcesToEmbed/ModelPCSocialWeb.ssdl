@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="Id_estado" />
+    </Key>
+    <Property Name="Id_estado" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="marca">
+    <Key>
+      <PropertyRef Name="Id_marca" />
+    </Key>
+    <Property Name="Id_marca" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="modelo">
+    <Key>
+      <PropertyRef Name="Id_modelo" />
+    </Key>
+    <Property Name="Id_modelo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_marca" Type="int" />
+    <Property Name="id_tipo" Type="int" />
+  </EntityType>
+  <EntityType Name="tipocomponente">
+    <Key>
+      <PropertyRef Name="Id_tipocomponente" />
+    </Key>
+    <Property Name="Id_tipocomponente" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="Id_Usuarios" />
+    </Key>
+    <Property Name="Id_Usuarios" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" />
+    <Property Name="dni" Type="nvarchar" MaxLength="50" />
+    <Property Name="direccion" Type="nvarchar(max)" />
+    <Property Name="cp" Type="int" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar(max)" />
+    <Property Name="fecha_nacimiento" Type="datetime" />
+    <Property Name="id_tipousuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="estado" EntityType="Self.estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marca" EntityType="Self.marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="modelo" EntityType="Self.modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipocomponente" EntityType="Self.tipocomponente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

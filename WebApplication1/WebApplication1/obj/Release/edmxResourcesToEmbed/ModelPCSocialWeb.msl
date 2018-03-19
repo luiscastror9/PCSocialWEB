@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="estadoes">
+      <EntityTypeMapping TypeName="DatabaseModel.estado">
+        <MappingFragment StoreEntitySet="estado">
+          <ScalarProperty Name="Id_estado" ColumnName="Id_estado" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marcas">
+      <EntityTypeMapping TypeName="DatabaseModel.marca">
+        <MappingFragment StoreEntitySet="marca">
+          <ScalarProperty Name="Id_marca" ColumnName="Id_marca" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modeloes">
+      <EntityTypeMapping TypeName="DatabaseModel.modelo">
+        <MappingFragment StoreEntitySet="modelo">
+          <ScalarProperty Name="Id_modelo" ColumnName="Id_modelo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipocomponentes">
+      <EntityTypeMapping TypeName="DatabaseModel.tipocomponente">
+        <MappingFragment StoreEntitySet="tipocomponente">
+          <ScalarProperty Name="Id_tipocomponente" ColumnName="Id_tipocomponente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="DatabaseModel.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Id_Usuarios" ColumnName="Id_Usuarios" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="id_tipousuario" ColumnName="id_tipousuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

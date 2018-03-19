@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="Id_estado" />
+    </Key>
+    <Property Name="Id_estado" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="marca">
+    <Key>
+      <PropertyRef Name="Id_marca" />
+    </Key>
+    <Property Name="Id_marca" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="modelo">
+    <Key>
+      <PropertyRef Name="Id_modelo" />
+    </Key>
+    <Property Name="Id_modelo" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_marca" Type="Int32" />
+    <Property Name="id_tipo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tipocomponente">
+    <Key>
+      <PropertyRef Name="Id_tipocomponente" />
+    </Key>
+    <Property Name="Id_tipocomponente" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuarios" />
+    </Key>
+    <Property Name="Id_Usuarios" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cp" Type="Int32" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="id_tipousuario" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="estadoes" EntityType="Self.estado" />
+    <EntitySet Name="marcas" EntityType="Self.marca" />
+    <EntitySet Name="modeloes" EntityType="Self.modelo" />
+    <EntitySet Name="tipocomponentes" EntityType="Self.tipocomponente" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+  </EntityContainer>
+</Schema>

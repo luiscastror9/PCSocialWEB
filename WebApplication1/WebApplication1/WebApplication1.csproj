@@ -46,13 +46,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -143,10 +149,43 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\pruebaController.cs" />
+    <Compile Include="estado.cs">
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="marca.cs">
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo.cs">
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPCSocialWeb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPCSocialWeb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPCSocialWeb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPCSocialWeb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPCSocialWeb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Tonto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tipocomponente.cs">
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>ModelPCSocialWeb.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database.mdf" />
@@ -159,10 +198,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ModelPCSocialWeb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelPCSocialWeb.Context.cs</LastGenOutput>
+      <DependentUpon>ModelPCSocialWeb.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelPCSocialWeb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPCSocialWeb.edmx</DependentUpon>
+      <LastGenOutput>ModelPCSocialWeb.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="ModelPCSocialWeb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPCSocialWeb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelPCSocialWeb.edmx.diagram">
+      <DependentUpon>ModelPCSocialWeb.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -188,7 +244,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Views\prueba\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -204,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

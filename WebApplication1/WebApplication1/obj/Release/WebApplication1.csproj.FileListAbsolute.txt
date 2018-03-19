@@ -74,3 +74,5 @@ C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\obj
 C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\obj\Release\WebApplication1.csproj.CopyComplete
 C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\obj\Release\WebApplication1.dll
 C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\obj\Release\WebApplication1.pdb
+C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\Maggie\Documents\GitHub\PCSocialWEB\WebApplication1\WebApplication1\bin\EntityFramework.xml

@@ -10,7 +10,14 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            DatabaseEntities s = new DatabaseEntities();
+            string test = "";
+            test = s.marcas.FirstOrDefault().descripcion.ToString();
+            WebApplication1.Models.Tonto t = new Models.Tonto();
+            t.TONTO = test;
+            t.numero_tontos = 13;
+            //ViewBag.nose = test;
+            return View(t);
         }
 
         public ActionResult About()
@@ -26,5 +33,29 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+
+
+        public int PruebaNumero(int numeroEsperado)
+        {
+            var test = numeroEsperado / 2;
+
+            //int numeroprocesado = procesadornumero(test);
+
+
+            return procesadornumero(test);
+
+        }
+
+
+        private int procesadornumero(int otroNumero)
+
+        {
+            int result = otroNumero * 3;
+
+            return result;
+        }
+
+
+
     }
 }
