@@ -54,8 +54,13 @@ namespace WebApplication1.Controllers
 
             return result;
         }
+        [HttpPost]
+        public ActionResult TEST(FormCollection data)
+        {
 
-
+            Session.Add("usuario", "nose");
+            return View("Index");
+        }
 
     }
 }

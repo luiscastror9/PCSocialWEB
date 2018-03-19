@@ -12,15 +12,21 @@
 </head>
 <body>
     <!--barra de navegacion switch con sesion iniciada-->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <ul class="nav nav-pills">
-            <li><a class="navbar-brand" href="index.cshtml">nombre del sitio</a></li>
-            <li><button type="button" class="btn btn-success" data-toggle="modal" data-target="#popupwindow">comenzar</button></li>
-            <li><button type="button" class="btn btn-default navbar-btn">instructivos</button></li>
-            <li><button type="button" class="btn btn-default navbar-btn">acerca de</button></li>
-        </ul>
-    </div>
-    <!--botonera tipo de pc-->
+    @if (Session["usuario"] == "nose")
+    {
+        @Html.Partial("ViewLogon")
+    }
+    else
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <ul class="nav nav-pills">
+                <li><a class="navbar-brand" href="index.cshtml">nombre del sitio </a></li>
+                <li><button type="button" class="btn btn-success" data-toggle="modal" data-target="#popupwindow">comenzar</button></li>
+                <li><button type="button" class="btn btn-default navbar-btn">instructivos</button></li>
+                <li><button type="button" class="btn btn-default navbar-btn">acerca de</button></li>
+            </ul>
+        </div>
+    }<!--botonera tipo de pc-->
     <div>
         <ul class="nav nav-pills">
             <li class="nav-item">
@@ -39,7 +45,7 @@
         </ul>
     </div>
 
-    <!--ACA VA EL SWITCH GET
+    <!--ACA VA EL "SWITCH" GET
         index
         sesion iniciada
             usuario/perfil
@@ -48,19 +54,22 @@
     <!--modal login-->
     <div class="modal fade" id="popupwindow">
         <div id="pop">
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">x</button>
                 <h3>INICIAR SESION</h3>
             </div>
+
             <div class="modal-body">
-                <form method="post" action='' name="login_form">
-                    <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
-                    <p><input type="password" class="span3" name="passwd" placeholder="Contraseña"></p>
-                    <p>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                        <a href="#">Olvidé mi contraseña</a>
-                    </p>
-                </form>
+                @using (Html.BeginForm("TEST", "Home", FormMethod.Post))
+                {
+                <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
+                <p><input type="password" class="span3" name="passwd" placeholder="Contraseña"></p>
+                <p>
+                    <button id="login" type="submit" class="btn btn-primary">Entrar</button>
+                    <a href="#">Olvidé mi contraseña</a>
+                </p>
+                }
             </div>
             <div class="modal-footer">
                 Crear una cuenta
@@ -83,3 +92,5 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
