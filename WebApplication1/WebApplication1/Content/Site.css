@@ -25,9 +25,10 @@ textarea {
 #costado {
     height: 300px;
     width: auto;
-    border-radius: 10px 10px 10px 10px;
+   
     -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px; 
+    border-radius: 10px 10px 10px 10px;
     border: 1px solid #bababa;
     
 }
@@ -41,9 +42,10 @@ input[type=search] {
    
     width:900px;
     height:300px;
-    border-radius: 10px 10px 10px 10px;
+   
     -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px; 
+    border-radius: 10px 10px 10px 10px;
     border: 1px solid #bababa; 
 }
 
@@ -62,7 +64,7 @@ input[type=search] {
              margin-top:10%;
 }
 .modal-dialog{
-    margin:none;
+    margin:0;
 
 }
 .modal-header
